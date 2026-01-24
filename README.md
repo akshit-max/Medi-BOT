@@ -1,37 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI RAG Text Assistant
 
-## Getting Started
+A Retrieval-Augmented Generation (RAG) based application that allows users to ask natural-language questions from large text documents and receive accurate, context-grounded answers.
 
-First, run the development server:
+This project focuses on **semantic search, hallucination control, and performance optimization**, following real-world RAG system design principles.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Ask questions from large text documents
+- Semantic search using vector embeddings
+- Context-aware answers powered by LLMs
+- Strict hallucination control (answers only from retrieved context)
+- Redis-based caching for faster responses and reduced cost
+- Clean separation between ingestion and query pipelines
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 System Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The application follows a standard **RAG pipeline**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Text documents are chunked into smaller segments
+2. Each chunk is converted into embeddings
+3. Embeddings are stored in a vector database
+4. User queries are embedded at runtime
+5. Top-k relevant chunks are retrieved via similarity search
+6. Retrieved context is sent to the LLM for answer generation
+7. Responses are cached to improve performance
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> The LLM never sees the full document — only the retrieved context.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# Medi-BOT" 
+- **Frontend:** Minimal chat-style UI
+- **Backend:** Node.js / Next.js
+- **Vector Database:** Qdrant
+- **Embeddings:** Sentence-transformer based embeddings
+- **LLM Provider:** Groq API
+- **Caching:** Redis
+- **Orchestration:** LangChain
+
+---
+
+## ⚙️ Key Design Decisions
+
+- Used **RAG instead of fine-tuning** for flexibility and instant knowledge updates
+- Added **strict system prompts** to prevent hallucinations
+- Introduced **Redis caching** to reduce latency and API cost
+- Limited scope to text files to focus on RAG core architecture
+
+---
+
+## ⚠️ Limitations
+
+- Currently optimized for moderate document sizes
+- No automatic re-ranking or hybrid search yet
+- Prototype-level concurrency handling
+
+---
+
+## 🔮 Future Improvements
+
+- Hybrid (keyword + semantic) search
+- Metadata-based filtering
+- Better chunking and re-ranking strategies
+- Role-based document access
+- Support for additional document formats (PDFs, DOCs)
+
+---
+
+## 📌 Purpose
+
+This project was built to deeply understand **modern RAG system design**, not just LLM usage.  
+It demonstrates applied AI, backend optimization, and clean architectural thinking.
+
