@@ -9,7 +9,7 @@ This project focuses on **semantic retrieval accuracy, latency optimization, cos
 
 ---
 
-## Backend: ai-rag-system-4wif.onrender.com/
+ **Backend:** https://ai-rag-system-4wif.onrender.com/
 
 
 ## 📸 Screenshots
