@@ -9,10 +9,18 @@ This project focuses on **semantic retrieval accuracy, latency optimization, cos
 
 ---
 
+## Backend: ai-rag-system-4wif.onrender.com/
+
+
 ## 📸 Screenshots
 
 ### Chat Interface
 <img width="1914" height="910" alt="Screenshot 2026-02-10 005251" src="https://github.com/user-attachments/assets/87bfa7ab-4741-471d-8025-18ab16a3ca45" />
+
+### Ingested Data
+<img width="1897" height="971" alt="image" src="https://github.com/user-attachments/assets/71577a3f-53aa-4920-b104-17e6cabbbea9" />
+
+
 
 ---
 
