@@ -6,6 +6,8 @@ This project focuses on **semantic search, hallucination control, and performanc
 
 ---
 
+video:https://drive.google.com/file/d/1SeO2xXspSP56_jABlRvnI-LqIb0zKd5g/view?usp=sharing
+
 ## 🚀 Features
 
 - Ask questions from large text documents
